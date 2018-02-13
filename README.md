@@ -1,0 +1,2 @@
+# pocketmanager
+Shop management App
