@@ -1,4 +1,4 @@
-package com.example.rishiraj.pocketmanager;
+package com.abhipatil.pocketmanagerfinal;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -70,5 +70,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(TABLE_NAME, "ID = ?",new String[] {id});
     }
+
+    /*public Cursor showsearchdata(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        //SQLiteDatabase db = this.getReadableDatabase();
+        //String selectquery = "SELECT * FROM" + TABLE_NAME + "WHERE" + COL_2 + "=?"  ;
+        //Cursor resd = db.rawQuery("SELECT * FROM " + TABLE_NAME + "WHERE PRODUCT='"  + "='" + String.valueOf( "product" )+"'",null);
+        // Cursor resd = db.rawQuery( " select product,price,stock from " +TABLE_NAME+ "where"  +COL_2 + "= ?",null );
+        //Cursor resd = db.rawQuery( TABLE_NAME,new String[]{COL_2,COL_4,COL_5},COL_2 + "=?" ,new String[] {String.valueOf( COL_2 )},null,null,null,null);
+        //Cursor resd = db.rawQuery( selectquery,null );
+        String selectQuery = "SELECT  * FROM " + TABLE_NAME + " WHERE id=" + id;
+        //  SQLiteDatabase db  = this.getReadableDatabase();
+        Cursor resd      = db.rawQuery(selectQuery, null);
+        String[] data      = null;
+        return resd;
+    }*/
+
+    public Cursor showsearch(String cat) {
+        if(cat.isEmpty()){
+            return null;
+        }
+        SQLiteDatabase db = this.getWritableDatabase();
+        //SQLiteDatabase db = this.getReadableDatabase();
+        //String selectquery = "SELECT * FROM" + TABLE_NAME + "WHERE" + COL_2 + "=?"  ;
+        //Cursor resd = db.rawQuery("SELECT * FROM " + TABLE_NAME + "WHERE PRODUCT='"  + "='" + String.valueOf( "product" )+"'",null);
+        // Cursor resd = db.rawQuery( " select product,price,stock from " +TABLE_NAME+ "where"  +COL_2 + "= ?",null );
+        //Cursor resd = db.rawQuery( TABLE_NAME,new String[]{COL_2,COL_4,COL_5},COL_2 + "=?" ,new String[] {String.valueOf( COL_2 )},null,null,null,null);
+        //Cursor resd = db.rawQuery( selectquery,null )
+        // Cursor resd =db.query(TABLE_NAME,new String[] { COL_4,COL_5},COL_1 + "=?",new String[] {String.valueOf(COL_2)},null,null,null,null);
+        //  Cursor resd=db.rawQuery( "SELECT * FROM data_table WHERE id="+product,new String[] { COL_4,COL_5} );
+        //for the above command  the result is coming no data found (code line 83) ,if part is executing
+        String selectQuery = "SELECT  * FROM " + TABLE_NAME + " WHERE category= \""+cat+"\"";
+        //  SQLiteDatabase db  = this.getReadableDatabase();
+        Cursor res     = db.rawQuery(selectQuery, null);
+        String[] data      = null;
+        return res;
+    }
+
+
+
 
 }

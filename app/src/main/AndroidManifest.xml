@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rishiraj.pocketmanager">
+    package="com.abhipatil.pocketmanagerfinal">
 
     <application
         android:allowBackup="true"
@@ -16,9 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main2Activity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".Main2activity" />
         <activity android:name=".Main3Activity" />
-        <activity android:name=".Main4Activity"></activity>
+        <activity android:name=".Main4Activity" />
+        <activity android:name=".Main5Activity" />
+        <activity android:name=".Main6Activity" />
+        <activity android:name=".Main7Activity"></activity>
     </application>
 
 </manifest>
